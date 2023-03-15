@@ -1,3 +1,36 @@
 .header{
-    height: 25px;
+    height: 40px;
+    font-family: 'MuseoSans';
+    border-bottom: 1px solid #f5f5f5;
+   
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding:  10px 30px;
+    .logo{
+        font-weight: 900;
+        font-size: 28px;
+        margin-top: -6px;
+        color:#0982c6;
+        .string{
+            font-weight: 100;
+            color:black;
+           
+        }
+    }
+    .task-indicator-wrapper{
+        padding: 0px 45px;
+        font-family: 'MuseoSans';
+        font-weight: 700;
+        font-size: 12px;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        .task-indicator-item{
+            padding:0px 18px;
+            height: 14px;
+        }
+    }
+
 }

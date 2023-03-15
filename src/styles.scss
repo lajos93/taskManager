@@ -9,14 +9,17 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+
+$blue-palette: mat.$blue-palette;
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$taskManager-primary: mat.define-palette(mat.$indigo-palette);
-$taskManager-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$taskManager-primary: mat.define-palette(mat.$blue-palette);
+$taskManager-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$taskManager-warn: mat.define-palette(mat.$red-palette);
+$taskManager-warn: mat.define-palette(mat.$blue-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
@@ -28,6 +31,9 @@ $taskManager-theme: mat.define-light-theme((
   )
 ));
 
+
+
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -37,3 +43,71 @@ $taskManager-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Add fonts */
+
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('./assets/fonts/MuseoSans/MuseoSans_900.ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('./assets/fonts/MuseoSans/MuseoSans_700.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('./assets/fonts/MuseoSans/MuseoSans_500.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('./assets/fonts/MuseoSans/MuseoSans_300.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('./assets/fonts/MuseoSans/MuseoSans_100.otf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('./assets/fonts/NunitoSans/NunitoSans-Black.ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('./assets/fonts/NunitoSans/NunitoSans-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('./assets/fonts/NunitoSans/NunitoSans-Black.ttf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('./assets/fonts/NunitoSans/NunitoSans-Regular.ttf');
+  font-weight: 500;
+  font-style: normal;
+}

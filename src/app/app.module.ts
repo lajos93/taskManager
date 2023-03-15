@@ -8,18 +8,21 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ProgressBarComponent } from './components/header/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSidenavModule,
+    MatSidenavModule,MatProgressSpinnerModule,
     BrowserAnimationsModule
   ],
   providers: [],
