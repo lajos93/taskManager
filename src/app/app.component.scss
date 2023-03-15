@@ -1,0 +1,20 @@
+
+.mat-drawer-container{
+    height: 100%;
+}
+.mat-drawer-content {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+.content-wrapper {
+  background: red;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  .content-body{
+    height: calc(100% - 25px);
+  }
+}

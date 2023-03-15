@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TaskService } from './services/task/task.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'taskManager';
+
+  constructor(private taskService: TaskService) { }
+
+  toggleSidebar(isOpen = undefined) {
+    this.taskService.toggleSidebarVisibility(isOpen)
+}
 }
