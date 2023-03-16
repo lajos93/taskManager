@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TaskService } from 'src/app/services/task/task.service';
+import { TaskService } from 'src/app/core/services/task/task.service';
 
 @Component({
   selector: 'app-sidebar',

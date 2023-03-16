@@ -1,0 +1,44 @@
+[
+  {
+    "name": "To Do",
+    "items": [
+      {
+        "id": "abc-1",
+        "dueDate": "20230605-16:34:53.506",
+        "title": "Task 1",
+        "description": "this is a great task",
+        "priority": 1,
+        "color": "red"
+      },
+      {
+        "id": "abc-2",
+        "dueDate": "20230605-16:34:53.506",
+        "title": "Task 2",
+        "description": "This is an awesome task",
+        "priority": 2,
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "name": "In Progress",
+    "items": [
+      {
+        "id": "abc-3",
+        "dueDate": "20230605-16:34:53.506",
+        "title": "Task 3",
+        "description": "this is a great task",
+        "priority": 3,
+        "color": "red"
+      },
+      {
+        "id": "abc-4",
+        "dueDate": "20230605-16:34:53.506",
+        "title": "Task 4",
+        "description": "This is an awesome task",
+        "priority": 3,
+        "color": "blue"
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+.card-outer-container {
+  padding: 8px 0px;
+  .card-container {
+    background-color: #00a8ff;
+    color: #fff;
+    padding: 12px;
+    display: flex;
+
+    flex-direction: column;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:last-child {
+        margin-top: 24px;
+      }
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .priority {
+      background-color: #fff;
+      border-radius: 25px;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        color: #e71d46;
+      }
+    }
+    .project-name {
+      margin-top: 8px;
+      color: #000;
+      padding: 4px 6px;
+      background-color: #ddd;
+      width: fit-content;
+    }
+
+    .due-date-remaining {
+      //margin-top: 24px;
+      font-size: 14px;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      .icon{
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+      }
+      .value {
+        margin-left: 4px;
+      }
+    }
+
+    .sprint {
+        font-size: 16px;
+        font-weight: 100;
+      }
+  }
+}

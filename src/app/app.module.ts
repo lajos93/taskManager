@@ -2,14 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MainComponent } from './components/main/main.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { HeaderComponent } from './components/header/header.component';
+import { MainComponent } from './modules/components/main/main.component';
+import { SidebarComponent } from './modules/components/sidebar/sidebar.component';
+import { HeaderComponent } from './modules/components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { ProgressBarComponent } from './components/header/progress-bar/progress-bar.component';
+import {MatIconModule} from '@angular/material/icon';
+import { ProgressBarComponent } from './modules/components/header/progress-bar/progress-bar.component';
+import { CardComponent } from './modules/components/main/list/card/card.component';
+import { ListComponent } from './modules/components/main/list/list.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,14 @@ import { ProgressBarComponent } from './components/header/progress-bar/progress-
     MainComponent,
     SidebarComponent,
     HeaderComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    CardComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSidenavModule,MatProgressSpinnerModule,
+    MatSidenavModule,MatProgressSpinnerModule,MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [],

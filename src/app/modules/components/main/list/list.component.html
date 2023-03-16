@@ -1,0 +1,5 @@
+<div class="list-container">
+    <h4 class="list-title">{{item.name}}</h4>
+    <app-card *ngFor="let detail of item.items; let i = index" [detail]="detail"/> 
+  
+</div>
