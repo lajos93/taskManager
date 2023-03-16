@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ITaskDetail } from 'src/app/core/models/taskDetail';
+import { initialTaskDetal, ITaskDetail } from 'src/app/core/models/taskDetail';
+import { TaskService } from 'src/app/core/services/task/task.service';
 
 @Component({
   selector: 'app-card',
@@ -7,7 +8,14 @@ import { ITaskDetail } from 'src/app/core/models/taskDetail';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() detail = <ITaskDetail>{}; // decorate the property with @Input()
+  @Input() detail = <ITaskDetail>initialTaskDetal; // decorate the property with @Input()
 
+  constructor(private taskService:TaskService){
 
+  }
+
+  stuff(parentId:string,id:string){
+    this.taskService.setSelectedTask(parentId,id);
+    this.taskService.toggleSidebarVisibility(true)
+  }
 }

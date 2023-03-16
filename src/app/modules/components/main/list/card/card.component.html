@@ -1,26 +1,28 @@
 <div class="card-outer-container">
+  <a (click)="stuff('a',detail.id)" href="#">
     <div class="card-container">
-            <div class="row">
-                <div class="title">     
-                    <span>{{detail.title}}</span>
-                </div>
-                <div class="priority">
-                    <mat-icon class="icon">keyboard_arrow_up</mat-icon>
-                </div>
-            </div>
-            <div class="row">
-                <div class="project-name">     
-                    <span>{{detail.project}}</span>
-                </div>
-            </div>
-            <div class="row"> 
-                <div class="due-date-remaining">     
-                    <mat-icon class="icon">eventNode</mat-icon>
-                    <span class="value"> {{ detail.dueDate | date: 'MMM dd '}}</span>
-                </div>
-                <div class="sprint">
-                    <span>{{detail.sprint}}</span>
-                </div>
-            </div>
+      <div class="row">
+        <div class="title">
+          <span>{{ detail.title }}</span>
+        </div>
+        <div class="priority">
+          <mat-icon class="icon">keyboard_arrow_up</mat-icon>
+        </div>
+      </div>
+      <div class="row">
+        <div class="project-name">
+          <span>{{ detail.project }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="due-date-remaining">
+          <mat-icon class="icon">eventNode</mat-icon>
+          <span class="value"> {{ detail.dueDate | date : "MMM dd " }}</span>
+        </div>
+        <div class="sprint">
+          <span>{{ detail.sprint }}</span>
+        </div>
+      </div>
     </div>
+  </a>
 </div>
