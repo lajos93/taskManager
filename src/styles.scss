@@ -115,3 +115,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 *{
   font-family: 'MuseoSans';
 }
+
+//material ui styling
+//ui elements
+
+//select
+.cdk-overlay-pane{
+  width:initial !important;
+  }
+
+.mat-mdc-select-value{
+    color: #004798 !important;
+}
+
+.select{
+  >div{
+      margin-top: 32px;
+      width: fit-content;
+      border: 1px solid #004798;
+      border-radius: 5px;
+      padding:6px 6px 6px 12px;
+  }
+  .mat-mdc-select-arrow{
+    padding-left: 16px;
+    color:#004798
+  }
+}
+
+
+.space-between{
+  justify-content: space-between;
+}

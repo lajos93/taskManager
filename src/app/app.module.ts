@@ -9,10 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button'
+import { MatSelectModule } from '@angular/material/select'
 import { ProgressBarComponent } from './modules/components/header/progress-bar/progress-bar.component';
 import { CardComponent } from './modules/components/main/list/card/card.component';
 import { ListComponent } from './modules/components/main/list/list.component';
 import { AppComponent } from './app.component';
+import { InfoComponent } from './modules/components/sidebar/info/info.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,13 @@ import { AppComponent } from './app.component';
     HeaderComponent,
     ProgressBarComponent,
     CardComponent,
-    ListComponent
+    ListComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSidenavModule,MatProgressSpinnerModule,MatIconModule,
+    MatSidenavModule,MatProgressSpinnerModule,MatIconModule,MatButtonModule,MatSelectModule ,
     BrowserAnimationsModule
   ],
   providers: [],

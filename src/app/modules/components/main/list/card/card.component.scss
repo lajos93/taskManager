@@ -1,3 +1,5 @@
+@import '../../../../../core/styles/shared.scss';
+
 .card-outer-container {
   padding: 8px 0px;
   .card-container {
@@ -14,6 +16,9 @@
       align-items: center;
       &:last-child {
         margin-top: 24px;
+      }
+      &-project-name{
+        margin-top: 8px;
       }
     }
 
@@ -35,11 +40,7 @@
       }
     }
     .project-name {
-      margin-top: 8px;
-      color: #000;
-      padding: 4px 6px;
-      background-color: #ddd;
-      width: fit-content;
+      @include projectName;
     }
 
     .due-date-remaining {

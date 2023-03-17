@@ -1,3 +1,51 @@
-.mat-drawer-sidenav{
-    border-left: 1px solid #f5f5f5;
+@import "../../../core/styles/shared.scss";
+
+.mat-drawer-sidenav {
+  border-left: 1px solid #f5f5f5;
+  .sidenav-inner {
+    width: 400px;
+    padding: 24px 32px;
+
+    //close icon
+    .action-buttons-container {
+      .close {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: #fff;
+        &:hover {
+          background-color: #ededed;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      .project-name {
+        @include projectName;
+      }
+      &-title {
+        margin-top: 18px;
+        font-size: 28px;
+        font-weight: 700;
+      }
+    }
+    .bottom-info {
+      font-size: 14px;
+      margin-top: 24px;
+      color: #a2a2a2;
+      font-weight: 100;
+      .row {
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+.task-info-wrapper {
+  padding-top: 36px;
 }

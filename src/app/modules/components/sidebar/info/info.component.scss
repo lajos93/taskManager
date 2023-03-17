@@ -1,0 +1,41 @@
+.task-info-container{
+    background-color: #004798;
+    color:#fff;
+    padding: 14px 24px ;
+    .header{
+        margin-bottom: 18px;
+        .title{
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+    }
+    .body{
+        font-weight: 300;
+        .row{
+            display: flex;
+            margin-bottom: 16px;
+            &-key{
+                width: 30%;
+                &:before{
+                    content: '•';
+                    padding-right: 8px;
+                }
+            }
+            .dash{
+                width: 10%;
+                margin:auto
+            }
+            &-value{
+                display: flex;
+                align-items: center;
+                width: 60%;
+                span{
+                    margin-left: 6px;
+                }
+               // width: 128px;
+              
+            }
+        }
+    }
+}

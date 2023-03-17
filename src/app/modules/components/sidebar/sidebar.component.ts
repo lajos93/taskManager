@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { initialTaskDetal, ITaskDetail } from 'src/app/core/models/taskDetail';
+import { data } from 'src/app/app.component';
+import { initialTaskTreeSingleDetail, ITaskTreeSingleDetail } from 'src/app/core/models/ITaskTree';
 import { TaskService } from 'src/app/core/services/task/task.service';
 
 @Component({
@@ -9,7 +10,12 @@ import { TaskService } from 'src/app/core/services/task/task.service';
 })
 export class SidebarComponent {
   isOpen: boolean = false;
-  details: ITaskDetail = initialTaskDetal;
+  details: ITaskTreeSingleDetail = initialTaskTreeSingleDetail;
+
+  selected = ''
+  data = data;
+
+
 
   constructor(private taskService: TaskService) {
     this.taskService.sidebarVisibilityChange.subscribe(
@@ -17,4 +23,13 @@ export class SidebarComponent {
     );
     this.taskService.selectedTaskChange.subscribe(value => this.details = value);
   }
+
+  getListNameFromId(id:string){
+    return this.taskService.getListNameFromId(id)
+  }
+
+  closeSidebar()  {
+    this.taskService.toggleSidebarVisibility(false);
+  }
+  
 }

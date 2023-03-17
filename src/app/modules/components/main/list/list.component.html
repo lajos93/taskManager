@@ -1,5 +1,5 @@
 <div class="list-container">
-    <h4 class="list-title">{{item.name}}</h4>
-    <app-card *ngFor="let detail of item.items; let i = index" [detail]="detail"/> 
+    <h4 class="list-title">{{getListNameFromId(item.id)}}</h4>
+    <app-card *ngFor="let detail of item.items; let i = index"  [parentId]="item.id" [detail]="detail"/> 
   
 </div>

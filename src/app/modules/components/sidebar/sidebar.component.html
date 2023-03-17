@@ -1,8 +1,42 @@
+<mat-drawer
+  #drawer
+  class="mat-drawer-sidenav"
+  mode="side"
+  position="end"
+  [opened]="isOpen"
+>
+  <div class="sidenav-inner">
+    <div class="row space-between">
+      <div class="project-name">
+        <span>{{ details.items.project }}</span>
+      </div>
+      <div class="action-buttons-container">
+        <button class="close" (click)="closeSidebar()"><mat-icon width="24" height="24"  class="icon">close</mat-icon></button>
+      </div>
+    </div>
 
-<mat-drawer #drawer class="mat-drawer-sidenav" mode="side" position="end" [opened]="isOpen" >
+    <div class="row">
+      <div class="row-title">
+        <span>{{ details.items.title }}</span>
+      </div>
+    </div>
 
-    <p >Lorem, ipsum dolor sit amet consectetur.</p>
-    {{details.title}}
-    
-  
-  </mat-drawer>
+    <div class="row">
+      <div class="row-status">
+        <mat-select matNativeControl [(value)]="details.id" class="select">
+          <mat-option *ngFor="let item of data" value="{{item.id}}">{{getListNameFromId(item.id)}} </mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div class="task-info-wrapper">
+      <app-info [detail]="details.items"/>
+    </div>
+
+    <div class="bottom-info">
+      <div class="row"><span>Created {{ details.items.createdAt | date : "MMM dd YYYY HH:MM a " }} </span></div>
+      <div class="row"><span>Updated {{details.items.updatedAt | date : "MMM dd YYYY HH:MM a"}}</span></div>
+    </div>
+
+  </div>
+</mat-drawer>

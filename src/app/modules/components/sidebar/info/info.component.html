@@ -1,0 +1,20 @@
+<div class="task-info-container">
+  <div class="header">
+    <div class="title">Details</div>
+  </div>
+  <div class="body">
+    <div class="row">
+      <div class="row-key">Due date</div>
+      <span class="dash">-</span>
+      <div class="row-value">
+        <mat-icon class="icon">eventNode</mat-icon
+        ><span>{{ detail.dueDate | date : "YYYY/MMM/dd " }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-key">Priority</div>
+      <span class="dash">-</span>
+      <div class="row-value">{{ detail.priority }}</div>
+    </div>
+  </div>
+</div>
