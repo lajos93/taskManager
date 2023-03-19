@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { initialTaskDetail, ITaskDetail } from 'src/app/core/models/ITaskDetail';
+import { BackendService } from 'src/app/core/services/backend/backend.service';
 import { TaskService } from 'src/app/core/services/task/task.service';
 
 @Component({
@@ -12,12 +13,12 @@ export class CardComponent {
   @Input() detail = <ITaskDetail>initialTaskDetail;
 
 
-  constructor(private taskService:TaskService){
+  constructor(private taskService:TaskService,private backendService:BackendService){
 
   }
 
-  stuff(){
-    this.taskService.setSelectedTask(this.parentId,this.detail.id);
+  toggleSidebarAndSetDetailsPageData(){
+    this.taskService.setSelectedTask(this.parentId,this.detail.id,this.backendService.getItems());
     this.taskService.toggleSidebarVisibility(true)
   }
 }

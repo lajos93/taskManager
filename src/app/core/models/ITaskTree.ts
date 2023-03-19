@@ -1,16 +1,21 @@
-import { initialTaskDetail, ITaskDetail } from "./ITaskDetail";
+import { initialTaskDetail, ITaskDetail } from './ITaskDetail';
 
 export interface ITaskTree {
-    id: string;
-    items: ITaskDetail[]
-  }
+  id: string;
+  items: ITaskDetail[];
+}
 
-  export interface ITaskTreeSingleDetail {
-    id: string;
-    items: ITaskDetail
-  }
+export interface ITaskTreeSingleDetail {
+  id: string;
+  items: ITaskDetail;
+}
 
-  export const initialTaskTreeSingleDetail = {
-    id: '',
-    items:initialTaskDetail
-  };
+export const initialTaskTreeSingleDetail = {
+  id: '',
+  items: initialTaskDetail,
+};
+
+export interface IStatus {
+  id: string;
+  name: string;
+}

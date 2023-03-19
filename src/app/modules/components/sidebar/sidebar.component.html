@@ -24,7 +24,7 @@
     <div class="row">
       <div class="row-status">
         <mat-select matNativeControl [(value)]="details.id" class="select">
-          <mat-option *ngFor="let item of data" value="{{item.id}}">{{getListNameFromId(item.id)}} </mat-option>
+          <mat-option *ngFor="let item of statusList" value="{{item.id}}">{{getListNameFromId(item.id)}} </mat-option>
         </mat-select>
       </div>
     </div>

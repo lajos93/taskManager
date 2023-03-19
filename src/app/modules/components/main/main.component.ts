@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { data } from 'src/app/app.component';
-
-
+import { ITaskTree } from 'src/app/core/models/ITaskTree';
+import { BackendService } from 'src/app/core/services/backend/backend.service';
 
 @Component({
   selector: 'app-main',
@@ -9,5 +8,13 @@ import { data } from 'src/app/app.component';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  data = data;
+  list: ITaskTree[] = [];
+
+  constructor(private backendService: BackendService) {
+    const items = this.backendService.getItems();
+    !items && this.backendService.addItems();
+    this.backendService.itemValue.subscribe((nextValue) => {
+      nextValue ? this.list = JSON.parse(nextValue): this.list = [];
+    });
+  }
 }

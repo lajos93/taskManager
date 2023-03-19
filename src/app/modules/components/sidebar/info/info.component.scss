@@ -16,6 +16,8 @@
             display: flex;
             margin-bottom: 16px;
             &-key{
+                display:flex;
+                align-items: center;
                 width: 30%;
                 &:before{
                     content: '•';

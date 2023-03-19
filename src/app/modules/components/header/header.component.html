@@ -1,15 +1,18 @@
 <div class="header">
-  <div class="logo"><span>task<span class="string">manager</span></span>
-  </div>
-  <div class="task-indicator-wrapper">
-    <div class="task-indicator-item">
-        <span class="number-of-tasks">
-            3 tasks
-      </span>
+  <div class="left">
+    <div class="logo"><span>task<span class="string">manager</span></span>
     </div>
-    <div class="task-indicator-item">
-      <app-progress-bar/>
+    <div class="task-indicator-wrapper">
+      <div class="task-indicator-item">
+          <span class="number-of-tasks">
+              3 tasks
+        </span>
+      </div>
+      <div class="task-indicator-item">
+        <app-progress-bar/>
+      </div>
     </div>
   </div>
+  <div class="right"><button (click)="resetList()" mat-button>Reset list ↺</button></div>
  
 </div>
