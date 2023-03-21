@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { data, listItem } from 'src/app/app.component';
 import { initialTaskDetail, ITaskDetail } from '../../models/ITaskDetail';
 import {
   initialTaskTreeSingleDetail,
@@ -8,7 +7,6 @@ import {
   ITaskTree,
   ITaskTreeSingleDetail,
 } from '../../models/ITaskTree';
-import { BackendService } from '../backend/backend.service';
 
 @Injectable({
   providedIn: 'root',

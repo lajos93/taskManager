@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { data } from 'src/app/app.component';
 import {
   initialTaskTreeSingleDetail,
   IStatus,
