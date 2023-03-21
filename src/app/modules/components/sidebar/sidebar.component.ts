@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { data } from 'src/app/app.component';
-import { initialTaskTreeSingleDetail, IStatus, ITaskTreeSingleDetail } from 'src/app/core/models/ITaskTree';
+import {
+  initialTaskTreeSingleDetail,
+  IStatus,
+  ITaskTreeSingleDetail,
+} from 'src/app/core/models/ITaskTree';
 import { TaskService } from 'src/app/core/services/task/task.service';
 
 @Component({
@@ -12,26 +16,29 @@ export class SidebarComponent {
   isOpen: boolean = false;
 
   details: ITaskTreeSingleDetail = initialTaskTreeSingleDetail;
-  statusList:IStatus[] = []
+  statusList: IStatus[] = [];
 
-  selected = ''
+  selected = '';
 
   constructor(private taskService: TaskService) {
     this.statusList = this.taskService.getStatusList()
+    this.taskService.statusListParsedChange.subscribe((value) => {
+      (this.statusList = value);
+    });
 
     this.taskService.sidebarVisibilityChange.subscribe(
       (value) => (this.isOpen = value)
     );
-    this.taskService.selectedTaskChange.subscribe(value => {
-      this.details = value});
+    this.taskService.selectedTaskChange.subscribe((value) => {
+      this.details = value;
+    });
   }
 
-  getListNameFromId(id:string){
-    return this.taskService.getListNameFromId(id)
+  getListNameFromId(id: string) {
+    return this.taskService.getListNameFromId(id);
   }
 
-  closeSidebar()  {
+  closeSidebar() {
     this.taskService.toggleSidebarVisibility(false);
   }
-  
 }

@@ -25,25 +25,21 @@ export class TaskService {
   //random task generator
   taskToGenerate: ITaskDetail = initialTaskDetail;
   //status as an extension of task
-  statusVal = new BehaviorSubject<string | null>(this.statuses);
+  statusListParsedChange: Subject<IStatus[]> = new Subject<IStatus[]>();
+  statusParsedVal: IStatus[] = [];
 
 
   constructor() {
     this.sidebarVisibilityChange.subscribe((value: boolean) => {
       this.isSidebarVisible = value;
     });
-
-    this.selectedTaskChange.subscribe((value: ITaskTreeSingleDetail) => {
-      this.selectedTask = value;
-    });
   }
 
-  set statuses(value: string) {
-    this.statusVal.next(value); // this will make sure to tell every subscriber about the change.
+  set statusList(value: string) {
     localStorage.setItem('status', value);
   }
 
-  get statuses() {
+  get statusList() {
     const item = localStorage.getItem('status');
     return item ? item : '';
   }
@@ -61,11 +57,11 @@ export class TaskService {
   }
 
   getStatusList () {
-    return this.statuses && JSON.parse(this.statuses);
+    return this.statusList && JSON.parse(this.statusList);
   }
 
   getListNameFromId(id: string) {
-    return this.statuses && JSON.parse(this.statuses)?.find((it:IStatus) => it.id === id)?.name;
+    return this.statusList && JSON.parse(this.statusList)?.find((it:IStatus) => it.id === id)?.name;
   }
 
   //random task generator
@@ -146,7 +142,8 @@ export class TaskService {
       { id: this.generateId(), name: 'Done' },
     ];
    
-    this.statuses = JSON.stringify(items)
+    this.statusList = JSON.stringify(items)
+    this.statusListParsedChange.next(items)
     return items;
   }
 
@@ -180,5 +177,9 @@ export class TaskService {
 
     return statusAlreadyHasData ? [{...statusAlreadyHasData,items:[...statusAlreadyHasData.items,generatedTask]}] : [...alreadyAddedData,{ id: currentStatusId, items: [generatedTask] }]
  
+  }
+  
+  countAllItems(itemsTree:ITaskTree[]){
+    return itemsTree.flatMap(itemTree => itemTree.items).length
   }
 }

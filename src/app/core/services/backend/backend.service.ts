@@ -43,7 +43,7 @@ export class BackendService {
           Math.random() * (randomIntervalMaxVal - randomIntervalMinVal + 1) +
             randomIntervalMinVal
         ) * 1000;
-      if (thisScope.data.length < 3) {
+      if (thisScope.taskService.countAllItems(thisScope.data) < 3) {
         setTimeout(function () {
           addItemsToLocalStorage();
           loop();
